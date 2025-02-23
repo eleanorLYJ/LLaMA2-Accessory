@@ -1,0 +1,19 @@
+services:
+  llama2-accessory:
+    build: .
+    container_name: llama2-container
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      - .:/workspace/LLaMA2-Accessory  # 掛載當前目錄到容器內
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+      - PATH=/workspace/venv/bin:$PATH
+    stdin_open: true
+    tty: true
