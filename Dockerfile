@@ -5,11 +5,9 @@ FROM nvidia/cuda:11.1.1-cudnn8-devel-ubuntu20.04
 # 設定環境變數，避免 tzdata 提示
 ENV DEBIAN_FRONTEND=noninteractive
 
-
 # 設定工作目錄
 WORKDIR /workspace
 
-# 更新 apt 並添加 Python 3.10 的 PPA
 # 更新 apt 並添加 Python 3.10 的 PPA
 RUN chmod 1777 /tmp && \
     apt update && apt install -y software-properties-common && \
@@ -52,6 +50,9 @@ RUN . /workspace/venv/bin/activate && pip3 install -r /workspace/LLaMA2-Accessor
 RUN cd /workspace/LLaMA2-Accessory && \
     . /workspace/venv/bin/activate && \
     pip3 install -e .
+
+# 設定 Hugging Face 模型存放目錄
+RUN mkdir -p /workspace/pretrained
 
 # 設定環境變數
 ENV PATH="/workspace/venv/bin:$PATH"
