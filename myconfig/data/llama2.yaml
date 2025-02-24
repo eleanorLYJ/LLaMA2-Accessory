@@ -1,0 +1,4 @@
+META:
+  -
+    path: './commitbench.json'
+    type: 'text'
