@@ -1,4 +1,4 @@
 META:
   -
-    path: './commitbench.json'
+    path: '../../data/commitbench.json'
     type: 'text'
