@@ -167,3 +167,7 @@ tokenizer.model
 *.swp
 
 .asset/
+
+# download
+data/
+pretrained/
