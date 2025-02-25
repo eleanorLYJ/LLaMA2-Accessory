@@ -5,8 +5,8 @@ ds = load_dataset("Maxscha/commitbench")
 
 json_data = [
     {
-        "instruction": f"generate commit message for {entry['diff']}",
-        "input": "",
+        "instruction": "Generate commit message for diff",
+        "input": entry['diff'],
         "output": entry["message"]
     }
     for entry in ds['train']
