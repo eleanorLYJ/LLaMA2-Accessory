@@ -19,7 +19,7 @@ echo "exp name: $exp_name"
 mkdir -p output/"$exp_name"
 
 torchrun --master_port=1112 --nproc_per_node=1 accessory/main_finetune.py \
---output_dir output/"$exp_name" --epochs 4 --warmup_epochs 1 \
+--output_dir output/"$exp_name" --epochs 1 --warmup_epochs 1 \
 --batch_size 1 --accum_iter 2 --num_workers 4 \
 --max_words 512 \
 --lr 0.00005 --min_lr 0.000005 --clip_grad 2 --weight_decay 0.02 \

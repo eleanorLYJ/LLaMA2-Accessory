@@ -1,4 +1,4 @@
 META:
   -
-    path: '../../data/commitbench.json'
+    path: '/workspace/LLaMA2-Accessory/data/commitbench.json'
     type: 'text'
